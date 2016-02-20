@@ -1,0 +1,11 @@
+.card {
+  max-width: 500px;
+}
+.card-inner {
+  height: 500px;
+  position: relative;
+}
+.card-buttons {
+  position: absolute;
+  bottom: 30px;
+}

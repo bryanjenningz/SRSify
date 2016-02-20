@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="srsApp">
+<head>
+  <title>SRSify</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="card.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
+  <script src="srsApp.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-brand-header">
+        <div class="col-xs-3 col-sm-2 col-sm-offset-2"><a class="navbar-brand" href="#" style="float: right;">SRSify</a></div>
+        <div class="col-xs-3 col-sm-2"><a class="navbar-brand" href="#" style="float: right;">Learn</a></div>
+        <div class="col-xs-3 col-sm-2"><a class="navbar-brand" href="#" style="float: right;">Decks</a></div>
+        <div class="col-xs-3 col-sm-2"><a class="navbar-brand" href="#" style="float: right;">Goal</a></div>
+      </div>
+    </div>
+  </nav>
+  <div ng-controller="srsCtrl" class="container card">
+    <div class="jumbotron card-inner">
+      <div ng-model="front">{{ card.front }}</div>
+      <hr ng-show="isBackShown">
+      <div ng-show="isBackShown" ng-model="back">{{ card.back }}</div>
+      <div class="card-buttons col-xs-11 col-sm-9">
+        <button ng-hide="isBackShown" ng-click="isBackShown = true" class="btn btn-lg btn-default col-xs-12">Show Back</button>
+        <button ng-show="isBackShown" ng-click="addScore('fail')" class="btn btn-lg btn-default col-xs-4">Fail</button>
+        <button ng-show="isBackShown" ng-click="addScore('pass')" class="btn btn-lg btn-default col-xs-4">Pass</button>
+        <button ng-show="isBackShown" ng-click="addScore('perfect')" class="btn btn-lg btn-default col-xs-4">Perfect</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
