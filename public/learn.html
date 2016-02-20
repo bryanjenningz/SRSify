@@ -1,0 +1,13 @@
+<div ng-controller="learnCtrl" class="container card">
+  <div class="jumbotron card-inner">
+    <div ng-model="front">{{card.front}}</div>
+    <hr ng-show="isBackShown">
+    <div ng-show="isBackShown" ng-model="back">{{card.back}}</div>
+    <div class="card-buttons col-xs-11 col-sm-9">
+      <button ng-hide="isBackShown" ng-click="isBackShown = true" class="btn btn-lg btn-default col-xs-12">Show Back</button>
+      <button ng-show="isBackShown" ng-click="addScore('fail')" class="btn btn-lg btn-default col-xs-4">Fail</button>
+      <button ng-show="isBackShown" ng-click="addScore('pass')" class="btn btn-lg btn-default col-xs-4">Pass</button>
+      <button ng-show="isBackShown" ng-click="addScore('perfect')" class="btn btn-lg btn-default col-xs-4">Perfect</button>
+    </div>
+  </div>
+</div>
