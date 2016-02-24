@@ -9,3 +9,9 @@
   position: absolute;
   bottom: 30px;
 }
+.goal-tracker {
+  font-size: 9px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

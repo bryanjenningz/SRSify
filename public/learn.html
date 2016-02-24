@@ -1,5 +1,11 @@
 <div ng-controller="learnCtrl" class="container card">
   <div class="jumbotron card-inner">
+    <div class="goal-tracker">
+      <span class="goal-total">Total: {{total}},</span>
+      <span class="goal-done">Done: {{done}},</span>
+      <span class="goal-failed">Failed: {{failed}},</span>
+      <span class="goal-unseen">Unseen: {{unseen}}</span>
+    </div>
     <div ng-model="front">{{card.front}}</div>
     <hr ng-show="isBackShown">
     <div ng-show="isBackShown" ng-model="back">{{card.back}}</div>
