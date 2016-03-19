@@ -47,7 +47,7 @@ learnApp.controller('learnCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.cards = $scope.deck.slice(0, $scope.goal);
     $scope.index = 0;
     $scope.card = $scope.cards[$scope.index];
-    $scope.done = 0;
+    $scope.stats = {done: 0};
     $scope.failed = 0;
     $scope.rate = 100;
   });
@@ -58,7 +58,7 @@ learnApp.controller('learnCtrl', ['$scope', '$http', function($scope, $http) {
     if (scores[score] === 0) {
       $scope.failed++;
     } else {
-      $scope.done++;
+      $scope.stats.done++;
     }
     if (!$scope.seenCards[$scope.index]) {
       $scope.seenCards[$scope.index] = true;
@@ -69,6 +69,6 @@ learnApp.controller('learnCtrl', ['$scope', '$http', function($scope, $http) {
     }
     $scope.card = $scope.cards[$scope.index];
     $scope.isBackShown = false;
-    $scope.rate = Math.floor(100 * $scope.done / ($scope.done + $scope.failed));
+    $scope.rate = Math.floor(100 * $scope.stats.done / ($scope.stats.done + $scope.failed));
   };
 }]);

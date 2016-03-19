@@ -1,8 +1,8 @@
 <div ng-controller="learnCtrl" class="container card">
   <div class="jumbotron card-inner">
     <div class="goal-tracker">
-      Total: {{total}}, Done: {{done}}, Failed: {{failed}},
-      Success: {{rate}}%
+      Total: {{stats.total}}, Done: {{stats.done}}, Failed: {{stats.failed}},
+      Success: {{stats.rate}}%
     </div>
     <div ng-model="front">{{card.front}}</div>
     <hr ng-show="isBackShown">
