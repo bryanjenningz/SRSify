@@ -12,7 +12,7 @@ learnApp.controller('learnCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.card = $scope.cards[$scope.index];
     $scope.done = 0;
     $scope.failed = 0;
-    $scope.unseen = $scope.total;
+    $scope.rate = 100;
   });
   $scope.seenCards = {};
 
@@ -30,7 +30,6 @@ learnApp.controller('learnCtrl', ['$scope', '$http', function($scope, $http) {
     }
     if (!$scope.seenCards[$scope.index]) {
       $scope.seenCards[$scope.index] = true;
-      $scope.unseen--;
     }
     $scope.index += 1;
     if ($scope.index >= $scope.cards.length) {
@@ -38,5 +37,6 @@ learnApp.controller('learnCtrl', ['$scope', '$http', function($scope, $http) {
     }
     $scope.card = $scope.cards[$scope.index];
     $scope.isBackShown = false;
+    $scope.rate = Math.floor(100 * $scope.done / ($scope.done + $scope.failed));
   };
 }]);
